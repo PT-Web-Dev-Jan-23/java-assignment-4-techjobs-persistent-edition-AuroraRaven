@@ -54,9 +54,9 @@ public class EmployerController {
         }
     }
 
-    @GetMapping("employers")
-    public String DisplayAllEmployers(Model model) {
-      model.addAttribute("title","All Employers");
+    @GetMapping("")
+    public String index(Model model) {
+      model.addAttribute("employers",employerRepository.findAll());
       return "employer/index";
     }
 }

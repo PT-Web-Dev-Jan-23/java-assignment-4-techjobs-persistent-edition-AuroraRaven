@@ -52,9 +52,9 @@ public class SkillController {
         }
     }
 
-    @GetMapping("skills")
-    public String DisplayAllSkills(Model model) {
-        model.addAttribute("title","All Skills");
+    @GetMapping("")
+    public String index(Model model) {
+        model.addAttribute("skills",skillRepository.findAll());
         return "skills/index";
     }
 }

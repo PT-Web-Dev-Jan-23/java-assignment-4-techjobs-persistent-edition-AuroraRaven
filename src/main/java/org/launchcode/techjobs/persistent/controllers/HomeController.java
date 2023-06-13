@@ -62,10 +62,10 @@ public class  HomeController {
         if (employerOptional.isEmpty()){
             model.addAttribute("title", "Invalid Employer");
         }else{
-            newJob.setSkills(skillObjs);
             newJob.setEmployer(employerOptional.get());
-            jobRepository.save(newJob);
-        }
+            }
+        newJob.setSkills(skillObjs);
+        jobRepository.save(newJob);
         return "redirect:";
     }
 
